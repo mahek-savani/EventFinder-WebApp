@@ -1,0 +1,133 @@
+table{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0 !important;
+}
+
+.radius{
+    border-radius: 20px;
+    overflow: auto;
+}
+
+.margin-table{
+    margin-top: 80px;
+    padding-bottom: 50px;
+}
+
+.singleEvent{
+    margin-top: 80px;
+    padding-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    /* border-radius: 20px; */
+    overflow: auto;
+    background-color: rgba(101, 101, 101, 0.459);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.arrow {
+    border: solid #ccc;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.mat-mdc-tab-group.mat-background-accent, .mat-mdc-tab-nav-bar.mat-background-accent {
+    --mat-mdc-tab-header-with-background-background-color: #119b89;
+    --mat-mdc-tab-header-with-background-foreground-color: #3663af;
+}
+
+::ng-deep .mat-mdc-tab-labels {
+    padding-left: 15% !important;
+    padding-right: 15% !important;
+}
+
+.eventLabel{
+    color: #2dffe3 !important;
+    font-weight: bold;
+}
+
+.noRecord{
+    background-color: white !important;
+    border-radius: 25px;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    margin-left: 15% !important;
+    margin-right: 15% !important;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.noResult{
+    background-color: white !important;
+    border-radius: 25px;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.onsale span{
+    border-radius: 5px;
+    padding: 2px 5px;
+    background-color: green;
+}
+
+.offsale span{
+    border-radius: 5px;
+    padding: 2px 5px;
+    background-color: red;
+}
+
+.cancelled span{
+    border-radius: 5px;
+    padding: 2px 5px;
+    background-color: black;
+}
+
+.postponed span{
+    border-radius: 5px;
+    padding: 2px 5px;
+    background-color: orange;
+}
+
+.rescheduled span{
+    border-radius: 5px;
+    padding: 2px 5px;
+    background-color: orange;
+}
+
+.heightCustom{
+    height: 45px;
+    overflow: hidden;
+    margin-bottom: 3.5px !important;
+}
+
+.marginBottomC{
+    margin-bottom: 3.5px !important;
+}
+
+.customColor{
+    color: rgb(0, 170, 255) !important;
+}
+
+::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label,
+::ng-deep .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label,
+::ng-deep .mat-mdc-tab .mdc-tab__text-label,
+::ng-deep .mat-mdc-tab-link .mdc-tab__text-label {
+        color: white !important;
+}
+
+::ng-deep .mat-mdc-tab .mdc-tab__text-label,
+::ng-deep .mat-mdc-tab-link .mdc-tab__text-label {
+    color: lightgrey !important;
+}
+
+::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label,
+::ng-deep .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
+    color: white !important;
+}
+

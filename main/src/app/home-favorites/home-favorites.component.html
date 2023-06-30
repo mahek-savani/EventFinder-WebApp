@@ -1,0 +1,36 @@
+<div class="container" style="max-width: 1000px;">
+    <div *ngIf="!isFavorite">
+        <div class="text-center ms-auto me-auto text-danger text-bold">
+            <div class="noFavorite text-danger fw-bold">
+                No favorite events to show
+            </div>
+        </div>
+    </div>
+    <div *ngIf="isFavorite" class="text-white table-responsive text-center margin-table">
+        <div class="mb-3 h5" style="color: rgb(105, 208, 174);">List of your favorite events</div>
+        <div class="radius">
+            <table class="table table-light table-borderless table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Event</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Venue</th>
+                        <th scope="col">Favorite</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let favorite of favoriteEvents; let i=index">
+                        <td class="fw-bold">{{i+1}}</td>
+                        <td>{{favorite.dateTime}}</td>
+                        <td>{{favorite.name}}</td>
+                        <td>{{favorite.genres}}</td>
+                        <td>{{favorite.venue}}</td>
+                        <td><i class="fa fa-trash-o" (click)="removeFavorite(favorite.id)" style="cursor: pointer;"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

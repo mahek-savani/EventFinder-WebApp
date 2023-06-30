@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="form mt-5">
+        <form (ngSubmit)="searchEvent()" ngNativeValidate>
+            <div class="title">Events Search</div>
+            <hr>
+            <div class="form-group mb-3">
+                <label for="keyword label" class="form-label">Keyword <span class="mandatory">*</span></label>
+                <input matInput type="text" class="form-control" id="keyword" [formControl]="keyword" [matAutocomplete]="auto" required="">
+                <mat-autocomplete #auto="matAutocomplete">
+                      <mat-option *ngIf="isLoading" class="is-loading">
+                        <mat-progress-spinner mode="indeterminate" diameter="25">
+                      </mat-progress-spinner></mat-option>
+                      <ng-container *ngIf="!isLoading">
+                        <mat-option *ngFor="let option of options" [value]="option" aria-selected="true" aria-disabled="false">
+                          {{option}}
+                        </mat-option>
+                      </ng-container>
+                </mat-autocomplete>
+            </div>
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 form-group mb-3">
+                        <label for="radius">Distance</label>
+                        <input type="number" name="radius" [formControl]="radius" class="form-control" min="0" placeholder="10">
+                    </div>
+                    <div class="col-9 col-md-4 form-group">
+                      <label for="category">Category <span class="mandatory">*</span></label>
+                      <select class="form-select" [formControl]="category" aria-label="Default select example">
+                        <option [ngValue]="null" selected>Default</option>
+                        <option value="KZFzniwnSyZfZ7v7nJ">Music</option>
+                        <option value="KZFzniwnSyZfZ7v7nE">Sports</option>
+                        <option value="KZFzniwnSyZfZ7v7na">Arts & Theatre</option>
+                        <option value="KZFzniwnSyZfZ7v7nn">Film</option>
+                        <option value="KZFzniwnSyZfZ7v7n1">Miscellaneous</option>
+                      </select>
+                    </div>
+                </div>
+                <div class="mt-3">
+                  <label for="location">Location <span class="mandatory">*</span></label>
+                  <input name="location" class="form-control" type="text" required pattern=".*\S+.*" [formControl]="location">
+                </div>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="autoDetect" [formControl]="autoLocate">
+                <label class="form-check-label" for="autoDetect">Auto-detect your location</label>
+            </div>
+            <div class="buttons d-flex justify-content-center">
+                <button type="submit" class="btn btn-danger me-2">SUBMIT</button>
+                <button type="reset" class="btn btn-primary" (click)="clearEverything()">CLEAR</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="container" style="max-width: 1000px;">
+  <div *ngIf="noLocation">
+      <div class="text-center ms-auto me-auto text-danger text-bold">
+          <div class="noResult text-danger fw-bold">
+              No results available
+          </div>
+      </div>
+  </div>
+</div>
+<app-home-table *ngIf="showTable" [data]='formData'></app-home-table>
